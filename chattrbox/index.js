@@ -3,8 +3,12 @@ var fs = require("fs");
 var extract = require("./extract");
 
 var handleError = function(err, res) {
+  var filePath = extract("/error.html");
+  console.log(filePath);
   res.writeHead(404);
-  res.end();
+  fs.readFile(filePath, function(req, data) {
+    res.end(data);
+  });
 };
 
 var server = http.createServer(function(req, res) {
