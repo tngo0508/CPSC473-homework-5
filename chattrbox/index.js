@@ -23,14 +23,11 @@ var server = http.createServer(function(req, res) {
     } else {
       if (filePath === extract("/test.pdf")) {
         res.setHeader("Content-Type", mime.getType("pdf"));
-      }
-      else if (filePath === extract("/test.txt")) {
+      } else if (filePath === extract("/test.txt")) {
         res.setHeader("Content-Type", mime.getType("txt"));
-      }
-      else if (filePath === extract("/test.mp3")) {
+      } else if (filePath === extract("/test.mp3")) {
         res.setHeader("Content-Type", mime.getType("mp3"));
-      }
-      else if (filePath === extract("/test.mp4")) {
+      } else if (filePath === extract("/test.mp4")) {
         res.setHeader("Content-Type", mime.getType("mp4"));
       }
       res.end(data);
